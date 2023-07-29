@@ -1,7 +1,6 @@
-import mongoose from "mongoose";
-import { JOB_STATUS, JOB_TYPE } from "../utils/constants.js";
-
-const jobSchema = new mongoose.Schema(
+import mongoose from 'mongoose';
+import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js';
+const JobSchema = new mongoose.Schema(
   {
     company: String,
     position: String,
@@ -13,18 +12,18 @@ const jobSchema = new mongoose.Schema(
     jobType: {
       type: String,
       enum: Object.values(JOB_TYPE),
-      default: JOB_TYPE.INTERNSHIP,
+      default: JOB_TYPE.FULL_TIME,
     },
     jobLocation: {
       type: String,
-      default: "My city",
+      default: 'my city',
     },
     createdBy: {
-      type: mongoose.Types.ObjectId, // Mongo ID
-      ref: "User",
+      type: mongoose.Types.ObjectId,
+      ref: 'User',
     },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Job", jobSchema);
+export default mongoose.model('Job', JobSchema);
