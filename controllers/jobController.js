@@ -2,7 +2,7 @@ import Job from "../models/JobModel.js";
 import { StatusCodes } from "http-status-codes";
 import mongoose from "mongoose";
 import day from "dayjs";
-
+// commit
 export const getAllJobs = async (req, res) => {
   const { search, jobStatus, jobType, sort } = req.query;
 
