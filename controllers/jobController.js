@@ -9,7 +9,7 @@ export const getAllJobs = async (req, res) => {
   const queryObject = {
     createdBy: req.user.userId,
   };
-
+  // commit
   if (search) {
     queryObject.$or = [
       { position: { $regex: search, $options: "i" } },
