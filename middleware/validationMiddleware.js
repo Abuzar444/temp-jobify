@@ -110,3 +110,5 @@ export const validateUpdateUserInput = withValidationErrors([
   body("location").notEmpty().withMessage("Location is required"),
   body("lastName").notEmpty().withMessage("Last name is required"),
 ]);
+
+// commit
