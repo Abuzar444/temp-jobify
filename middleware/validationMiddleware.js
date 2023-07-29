@@ -7,7 +7,7 @@ import {
   UnauthorizedError,
 } from "../errors/customErrors.js";
 import { JOB_STATUS, JOB_TYPE } from "../utils/constants.js";
-import Job from '../models/JobModel.js'
+import JobModel from '../models/JobModel.js'
 import User from "../models/UserModel.js";
 
 const withValidationErrors = (validateValues) => {
@@ -48,7 +48,7 @@ export const validateIdParam = withValidationErrors([
     if (!isValidId) throw new BadRequestError("Invalid MongoDB id");
 
     // checks if there is a job gor the id
-    const job = await Job.findById(id);
+    const job = await JobModel.findById(id);
     if (!job) throw new NotFoundError(`No job with id ${id}`);
 
     const isAdmin = req.user.role === "admin";
