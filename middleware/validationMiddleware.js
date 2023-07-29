@@ -7,8 +7,8 @@ import {
   UnauthorizedError,
 } from "../errors/customErrors.js";
 import { JOB_STATUS, JOB_TYPE } from "../utils/constants.js";
-import User from "../models/UserModel.js";
 import Job from '../models/JobModel.js'
+import User from "../models/UserModel.js";
 
 const withValidationErrors = (validateValues) => {
   return [
